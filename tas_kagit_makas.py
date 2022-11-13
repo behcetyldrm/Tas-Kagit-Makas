@@ -9,10 +9,11 @@ benimSkor = 0
 
 print("******TAŞ, KAĞIT, MAKAS OYUNUNA HOŞGELDİN!******")
 while True:
-
-    bilgisayarSecim = random.choice(secenek)
+    
+    bilgisayarSecim = random.choice(secenek) # Bilgisayar taş, kağıt ve makas seçeneklerinden rastgele 1 tanesini seçer
     benimSecim = input("\nTaş mı, kağıt mı, makas mı ?: ")
-
+    
+    #Taş seçtiğimiz durumlar
     if benimSecim == tas:
 
         if bilgisayarSecim == tas:
@@ -25,7 +26,8 @@ while True:
         elif bilgisayarSecim == makas:
             print("Sonuç: Galipsin. Sen: Taş, Bilgisayar: Makas")
             benimSkor += 1
-            
+    
+    #Kağıt seçtiğimiz durumlar
     if benimSecim == kagit:
 
         if bilgisayarSecim == tas:
@@ -38,7 +40,8 @@ while True:
         elif bilgisayarSecim == makas:
             print("Sonuç: Bilgisayar Galip. Sen: Kağıt, Bilgisayar: Makas")
             bilgisayarSkor += 1
-            
+    
+    #Makas seçtiğimiz durumlar
     if benimSecim == makas:
 
         if bilgisayarSecim == tas:
@@ -52,10 +55,11 @@ while True:
         elif bilgisayarSecim == makas:
             print("Sonuç: Berabere. Sen = Makas, Bilgisayar: Makas")
     
+    #Kazanma durumları
     if benimSkor == 3:
         print(f"Tebrikler kazandın! \nSen: {benimSkor}, Bilgisayar: {bilgisayarSkor}")
         
-        devam = input("\nTekrar oynamak ister misin? (e/h): ")
+        devam = input("\nTekrar oynamak ister misin? (e/h): ") # e -> oyna h -> bitir
 
         if devam == "e":
             bilgisayarSkor = 0
