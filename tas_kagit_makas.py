@@ -73,6 +73,14 @@ while True:
             
         elif(myScore == 3):
             print(f"\nKazandın, tebrikler! Sen: {myScore} PC: {pcScore}")
+            devam = input("\nTekrar oynayacak mısın?(E/H): ")
+            secimSonuc = devamControl(devam)
+            if secimSonuc:
+                myScore = 0
+                pcScore = 0
+            else:
+                print("\nOyun Bitti!")
+                break
     else:
         print("\nDüzgün yazınız!")
     
